@@ -1,75 +1,127 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
 
-body {
+:root{
+    --bg: #758190;
+    --accent-color: lightblue;
+    --black: #000;
+    --stats-color: #a8b0bc;
+    --white: #fff;
+    --off-white: #11110f;
+    --bg2: #1a1b1c;
+
+}
+body{
     font-family: 'Cabin';
-    background-color: #758190;
+    background-color: var(--bg2);
+    max-width: 97%;
 }
-
-#tentacles {
+body.active{
+    --bg: #D2B48D;
+    --accent-color: #F4F4DB;
+    --black: #000;
+    --stats-color: #E7D4AB;
+    --white: #fff;
+    --off-white: #11110f;
+}
+#tentacles{
     width: 50px;
-}
-
-.header {
+} 
+.header{
     display: flex;
-    background-color: lightblue;
+    background-color: var(--accent-color);
     padding: 1%;
     align-items: center;
-    margin-left: -10px;
-    margin-right: -10px;
-    margin-top: -10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    justify-content: space-around;
+    row-gap: 10px;
+    border-radius: 15px;
+}
+.header-text{
+    flex-grow: 1;
+
+}
+a{
+    display: block;
+    text-decoration: none;
+    flex-grow: 2;
+    color:var(--black);
+}
+a:active{
+    color: var(--stats-color);
 }
 
+h2.seaMonster,#description-container p, .stats, #ourGames, #here {
+    margin-left:13px !important;
+    text-align: center;
+    color: white;  
+}
+#ourGames,h2.seaMonster,h2.stats{
+    color: green;
+}
 .stats-container {
     display: flex;
+    align-items: center;
+    cursor: pointer;
 }
-
+.stats-card:hover{
+    box-shadow: 0 0 30px var(--accent-color);
+}
 .stats-card {
-    background-color: #a8b0bc;
-    border-radius: 7px;
+    background-color: var(--stats-color);
+    border-radius: 10px;
     padding: 1%;
     margin: 1%;
     width: 100%;
     text-align: center;
+    box-shadow: 0 6px var(--black);
 }
-
 #num-contributions, #total-raised, #num-games {
     font-size: 50px;
 }
-
 #games-container {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-
 .game-img {
     width: 100%;
     border-radius: 5px;
-    box-shadow: 0 0 10px #FFFFFF;
+    box-shadow: 0 0 10px var(--white);
 }
-
-.game-card {
-    background-color: #FFFFFF;
+.game-card{
+    background-color: var(--white);
     padding: 1%;
     margin: 1%;
     width: 300px;
     text-align: center;
-    border-radius: 7px;
+    border-radius: 10px;
+    box-shadow: 0 6px var(--black);
 }
-
-.game-card:hover {
+.game-card:hover{
     cursor: pointer;
-    box-shadow: 0 0 30px lightblue;
+    box-shadow: 0 0 40px var(--accent-color);
 }
-
-#button-container {
+#button-container{
     text-align: center;
 }
-
-button {
+button{
     font-family: 'Cabin';
     border: none;
-    padding: 1%;
+    padding: 15px 25px;
     margin: 1%;
-    border-radius: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 9px var(--black);
+    outline: none;
+}
+button:hover{
+    background-color: var(--accent-color);
+}
+button:active{
+    background-color: var(--accent-color);
+    box-shadow: 0 5px;
+    transform: translateY(4px);
 }
